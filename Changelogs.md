@@ -1,5 +1,9 @@
 == 0.1.4
 
+* Add data-subject and data-body
+
+== 0.1.4
+
 * Add Plurk support;
 * Fix Renren share link;
 
