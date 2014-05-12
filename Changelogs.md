@@ -1,4 +1,4 @@
-== 0.1.4
+== 0.1.5
 
 * Add data-subject and data-body
 
