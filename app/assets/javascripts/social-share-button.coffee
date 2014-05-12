@@ -14,7 +14,9 @@ window.SocialShareButton =
       url = encodeURIComponent(location.href)
     switch site
       when "email"
-        location.href = "mailto:?to=&subject=#{title}&body=#{url}"
+        subject = encodeURIComponent($(el).data('subject') || '')
+        body    = encodeURIComponent($(el).data('body') || '')
+        location.href = "mailto:?to=&subject=#{subject}&body=#{body}"
       when "weibo"
         SocialShareButton.openUrl("http://service.weibo.com/share/share.php?url=#{url}&type=3&pic=#{img}&title=#{title}")
       when "twitter"
