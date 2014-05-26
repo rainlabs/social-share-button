@@ -11,11 +11,13 @@ module SocialShareButton
         extra_data = opts.select { |k, _| k.to_s.start_with?('data') } if name.eql?('tumblr')
 
         link_title = t "social_share_button.share_to", :name => t("social_share_button.#{name.downcase}")
-        html << link_to("","#", {:rel => ["nofollow", rel],
+        html << link_to("#", {:rel => ["nofollow", rel],
                                   "data-site" => name,
                                   :class => "social-share-button-#{name}",
                                   :onclick => "return SocialShareButton.share(this);",
-                                  :title => h(link_title)}.merge(extra_data))
+                                  :title => h(link_title)}.merge(extra_data)) do
+                                    "<span></span>".html_safe
+                                  end
       end
       html << "</div>"
       raw html.join("\n")
